@@ -42,6 +42,12 @@ function App() {
 
     setAllFilteredMovies([...allMovies]);
   }
+
+  function handleFilterMovies(search) {
+    const searchMovies = allMovies.filter((movie) => movie.name.includes(search));
+
+    search ? setAllFilteredMovies(searchMovies) : setAllFilteredMovies(allMovies);
+  }
   return <div className="App"></div>;
 }
 
