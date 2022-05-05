@@ -18,6 +18,8 @@ function App() {
   const [movieFormColor, setMovieFormColor] = useState('lightblue');
   const [filterQuery, setFilterQuery] = useState('');
 
+  useEffect(() => handleFilterMovies(filterQuery), [filterQuery]); //eslint-disable-line
+
   function submitMovie(e) {
     e.preventDefault();
 
