@@ -10,6 +10,13 @@ html,
 
 body {
   background-image: url(./background.png);
+  background-position: center;
+  background-size: cover;
+}
+
+.img {
+  height: 100px;
+  width: 100px;
 }
 
 .App {
