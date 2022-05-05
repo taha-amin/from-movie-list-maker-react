@@ -6,7 +6,8 @@ export default function Movie({ movie, handleDeleteMovie }) {
   return (
     <div className="movie" onClick={() => handleDeleteMovie && handleDeleteMovie(movie.name)}>
       <h3>{movie.name}</h3>
-      <p>{movie.year} Year</p>
+      <p>Released in: {movie.year}</p>
+      <p>Directed By: {movie.director}</p>
     </div>
   );
 }
