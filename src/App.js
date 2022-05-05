@@ -12,10 +12,28 @@ import Movie from './Movie';
 function App() {
   const [allMovies, setAllMovies] = useState([]);
   const [filteredMovies, setAllFilteredMovies] = useState([]);
+  const [movieFormName, setMovieFormName] = useState([]);
   const [movieFormYearReleased, setMovieFormYearReleased] = useState('');
   const [movieFormDirector, setMovieFormDirector] = useState('');
   const [movieFormColor, setMovieFormColor] = useState('lightblue');
   const [filterQuery, setFilterQuery] = useState('');
+
+  function submitMovie(e) {
+    e.preventDefault();
+
+    const newMovie = {
+      name: movieFormName,
+      color: movieFormColor,
+      director: movieFormDirector,
+    };
+
+    setAllMovies([...allMovies, newMovie]);
+
+    setMovieFormName('');
+    setMovieFormYearReleased('');
+    setMovieFormDirector('');
+    setMovieFormColor('lightblue');
+  }
   return <div className="App"></div>;
 }
 
