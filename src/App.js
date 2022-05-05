@@ -25,6 +25,7 @@ function App() {
 
     const newMovie = {
       name: movieFormName,
+      year: movieFormYearReleased,
       color: movieFormColor,
       director: movieFormDirector,
     };
@@ -50,7 +51,39 @@ function App() {
 
     search ? setAllFilteredMovies(searchMovies) : setAllFilteredMovies(allMovies);
   }
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <div className="current-movie quarter">
+        <Movie
+          movie={{
+            name: movieFormName,
+            year: movieFormYearReleased,
+            color: movieFormColor,
+            director: movieFormDirector,
+          }}
+        />
+      </div>
+      <div className="movie-filter quarter">
+        Filter Movies
+        <input onChange={(e) => setFilterQuery(e.target.value)} />
+      </div>
+      <MovieForm
+        submitMovie={submitMovie}
+        movieFormName={movieFormName}
+        setMovieFormName={setMovieFormName}
+        movieFormColor={movieFormColor}
+        setMovieFormColor={setMovieFormColor}
+        movieFormDirector={movieFormDirector}
+        setMovieFormDirector={setMovieFormDirector}
+        movieFormYearReleased={movieFormYearReleased}
+        setMovieFormYearReleased={setMovieFormYearReleased}
+      />
+      <MovieList
+        movies={filterQuery ? filteredMovies : allMovies}
+        handleDeleteMovie={handleDeleteMovie}
+      />
+    </div>
+  );
 }
 
 export default App;
