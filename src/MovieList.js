@@ -2,11 +2,11 @@
 import React from 'react';
 import Movie from './Movie';
 
-export default function MovieList({ movies, handleDeleteMovies }) {
+export default function MovieList({ movies, handleDeleteMovie }) {
   return (
     <div className="movie-list quarter">
       {movies.map((movie, i) => (
-        <Movie key={movie.name + i} movie={movie} handleDeleteMovies={handleDeleteMovies} />
+        <Movie key={movie.name + i} movie={movie} handleDeleteMovie={handleDeleteMovie} />
       ))}
     </div>
   );

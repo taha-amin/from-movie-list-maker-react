@@ -18,7 +18,7 @@ function App() {
   const [movieFormColor, setMovieFormColor] = useState('lightblue');
   const [filterQuery, setFilterQuery] = useState('');
 
-  useEffect(() => handleFilterMovies(filterQuery), [filterQuery]); //eslint-disable-line
+  useEffect(() => handleFilterMovies(filterQuery), [allMovies, filterQuery]); //eslint-disable-line
 
   function submitMovie(e) {
     e.preventDefault();
@@ -43,7 +43,7 @@ function App() {
 
     allMovies.splice(movieIndex, 1);
 
-    setAllFilteredMovies([...allMovies]);
+    setAllMovies([...allMovies]);
   }
 
   function handleFilterMovies(search) {
